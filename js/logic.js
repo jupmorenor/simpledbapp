@@ -1,5 +1,10 @@
+var tunel = require('global-tunnel');
 var simple = require("simpleDB");
 var db = null
+tunel.initialize({
+  host: 'proxy.udistrital.edu.co',
+  port: '3128'
+});
 module.exports = {
   init:function() {
     db = new simple.SimpleDB(
